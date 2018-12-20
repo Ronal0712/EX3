@@ -20,7 +20,25 @@ public class CES extends Student {
 	
 	private static ArrayList<Student> ReadFile (String filepath) {
 		Scanner scanner = null;
+		String mName = " ";
+		int mAmount = 0;
+		int mSum = 0;
 		
+		try{
+			scanner = new Scanner(new File(filepath));
+			
+			while(scanner.hasNext()) {
+				mName = scanner.next();
+				mAmount = scanner.nextInt();
+				mSum +=mAmount;
+				
+				
+			}
+		}catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}finally {
+			scanner.close();
+		}
 		
 		return list;
 	}
